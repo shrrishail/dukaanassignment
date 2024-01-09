@@ -7,7 +7,7 @@ const Dashboard = () => {
     return (
         <main className='w-[calc(100%-224px)] bg-[#FAFAFA] h-max-100'>
             <Header />
-            <div className='p-8 flex flex-col justify-start gap-8 text-[#1A181E] overflow-y-scroll max-h-[100vh]'>
+            <div className='p-8 flex flex-col justify-start gap-8 text-[#1A181E] overflow-y-scroll max-h-[100vh] pb-24'>
                 {/* top cards */}
                 <div className="overview flex flex-col gap-6 justify-start">
                     <div className="heading flex justify-between items-center">
@@ -44,7 +44,7 @@ const Dashboard = () => {
                                 <svg className='absolute left-[9px] top-[50%] translate-y-[-50%]' width="14" height="14" viewBox="0 0 14 14" fill="none">
                                     <path d="M5.95 10.5263C3.4412 10.5263 1.4 8.48 1.4 5.96491C1.4 3.44982 3.4412 1.40351 5.95 1.40351C8.4588 1.40351 10.5 3.44982 10.5 5.96491C10.5 8.48 8.4588 10.5263 5.95 10.5263ZM10.7443 9.48281C11.4674 8.49474 11.9 7.2814 11.9 5.96491C11.9 2.67579 9.2309 0 5.95 0C2.6691 0 0 2.67579 0 5.96491C0 9.25403 2.6691 11.9298 5.95 11.9298C7.4137 11.9298 8.7542 11.3944 9.7909 10.5116L12.2528 12.9796C12.3893 13.1165 12.5685 13.1853 12.7477 13.1853C12.9269 13.1853 13.1061 13.1165 13.2426 12.9796C13.5163 12.7053 13.5163 12.2618 13.2426 11.9874L10.7443 9.48281Z" fill="#999999"/>
                                 </svg>
-                                <input type="text" className='w-full h-[40px] text-sm bg-transparent px-4 ps-[34px] py-[9px] rounded-[6px] border border-[#D9D9D9]' placeholder='Search by order ID...' />
+                                <input type="text" className='w-full outline-none h-[40px] text-sm bg-transparent px-4 ps-[34px] py-[9px] rounded-[6px] border border-[#D9D9D9]' placeholder='Search by order ID...' />
                             </div>
                             <div className="actions flex gap-3">
                                 <button className="flex justify-center items-center gap-[6px] px-3 py-1 rounded-[6px] border border-[#D9D9D9]">
@@ -92,7 +92,7 @@ const Dashboard = () => {
                             {
                                 Children.toArray(entries.map((entry) => {
                                     return (
-                                        <div className='border border-b-[#E6E6E6] flex gap-10 py-[10px] px-3 text-sm'>
+                                        <div className='border border-transparent border-b-[#E6E6E6] flex gap-10 py-[10px] px-3 text-sm'>
                                             <span className='w-[25%]'>{entry.id}</span>
                                             <span className='w-[25%]'>{entry.date}</span>
                                             <span className='w-[25%] text-right'>{entry.amount}</span>
@@ -101,6 +101,34 @@ const Dashboard = () => {
                                     )
                                 }))
                             }
+                        </div>
+
+                        <div className="buttons mt-6 flex w-full justify-center items-center gap-6">
+                            <button className="previous py-[6px] px-3 border border-[#D9D9D9] rounded text-sm">
+                                <svg className='me-2 inline' width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.78033 0.96967C5.48744 0.676777 5.01256 0.676777 4.71967 0.96967L0.21967 5.46967C0.0790172 5.61032 -9.53674e-07 5.80109 -9.53674e-07 6C-9.53674e-07 6.19891 0.0790172 6.38968 0.21967 6.53033L4.71967 11.0303C5.01256 11.3232 5.48744 11.3232 5.78033 11.0303C6.07322 10.7374 6.07322 10.2626 5.78033 9.96967L1.81066 6L5.78033 2.03033C6.07322 1.73744 6.07322 1.26256 5.78033 0.96967Z" fill="#4D4D4D"/>
+                                </svg>
+                                Previous
+                            </button>
+                            <div className='pages flex justify-center gap-2 items-center text-sm'>
+                                <p className='px-[2px]'>1</p>
+                                <p className='px-[2px]'>...</p>
+                                <p className='px-2 py-[6px] text-white rounded bg-[#146EB4]'>10</p>
+                                <p className='px-[2px]'>11</p>
+                                <p className='px-[2px]'>12</p>
+                                <p className='px-[2px]'>13</p>
+                                <p className='px-[2px]'>14</p>
+                                <p className='px-[2px]'>15</p>
+                                <p className='px-[2px]'>16</p>
+                                <p className='px-[2px]'>17</p>
+                                <p className='px-[2px]'>18</p>
+                            </div>
+                            <button className="previous py-[6px] px-3 border border-[#D9D9D9] rounded text-sm">
+                                Next
+                                <svg className='ms-2 inline' width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.21967 0.96967C0.512563 0.676777 0.987437 0.676777 1.28033 0.96967L5.78033 5.46967C5.92098 5.61032 6 5.80109 6 6C6 6.19891 5.92098 6.38968 5.78033 6.53033L1.28033 11.0303C0.987437 11.3232 0.512564 11.3232 0.21967 11.0303C-0.0732229 10.7374 -0.0732229 10.2626 0.21967 9.96967L4.18934 6L0.21967 2.03033C-0.0732233 1.73744 -0.0732233 1.26256 0.21967 0.96967Z" fill="#4D4D4D"/>
+                                </svg>
+                            </button>
                         </div>
                     </div>
                 </div>

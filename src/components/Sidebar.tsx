@@ -4,6 +4,8 @@ import { SidebarMenuItem } from '../types/sidebar'
 import LogoImage from '.././assets/logo.png';
 
 const Sidebar = () => {
+  const active = 'Payments';
+  
   return (
     <aside className='h-full w-[224px] px-[10px] py-4 bg-[#1E2640]'>
         <nav className='h-full flex flex-col justify-start gap-4 p-2'>
@@ -28,12 +30,12 @@ const Sidebar = () => {
             {
               Children.toArray(sidebarItems.map((item: SidebarMenuItem) => {
                 return (
-                  <li>
-                    <a className='w-full flex gap-2 justify-start items-center px-4 py-2'>
+                  <li className='w-full'>
+                    <a className={`w-full flex gap-2 justify-start items-center px-4 py-2 ${active === item.label ? 'bg-white/10 rounded' : ''}`}>
                       <span>
                         {item.icon}
                       </span>
-                      <p className='text-white/80 font-medium text-sm'>{item.label}</p>
+                      <p className={`text-white/80 font-medium text-sm ${active === item.label ? 'text-white' : ''}`}>{item.label}</p>
                     </a>
                   </li>
                 )
