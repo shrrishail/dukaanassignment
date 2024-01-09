@@ -7,7 +7,7 @@ const Sidebar = () => {
   const active = 'Payments';
   
   return (
-    <aside className='h-full w-[224px] px-[10px] py-4 bg-[#1E2640]'>
+    <aside className='h-full w-0 md:w-[224px] px-0 md:px-[10px] py-4 bg-[#1E2640]'>
         <nav className='h-full flex flex-col justify-start gap-4 p-2'>
           <div className="flex gap-3 justify-between items-center">
             <div className="w-fit h-fit">

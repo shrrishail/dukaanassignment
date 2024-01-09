@@ -5,9 +5,9 @@ import entries from '../assets/entries.json';
 const Dashboard = () => {
 
     return (
-        <main className='w-[calc(100%-224px)] bg-[#FAFAFA] h-max-100'>
+        <main className='w-full md:w-[calc(100%-224px)] bg-[#FAFAFA] h-max-100'>
             <Header />
-            <div className='p-8 flex flex-col justify-start gap-8 text-[#1A181E] overflow-y-scroll max-h-[100vh] pb-24'>
+            <div className='p-3 pb-20 md:p-8 flex flex-col justify-start gap-8 text-[#1A181E] overflow-y-scroll max-h-[100vh] md:pb-24'>
                 {/* top cards */}
                 <div className="overview flex flex-col gap-6 justify-start">
                     <div className="heading flex justify-between items-center">
@@ -19,7 +19,7 @@ const Dashboard = () => {
                             </svg>
                         </button>
                     </div>
-                    <div className="cards flex gap-5">
+                    <div className="cards flex flex-col md:flex-row gap-5 w-full">
                         <div className="bg-white flex flex-col gap-4 flex-1 rounded-lg p-5 stats-shadow">
                             <p className='text-[#4D4D4D]'>Online orders</p>
                             <p className='font-medium text-[32px]'>231</p>
@@ -37,7 +37,7 @@ const Dashboard = () => {
                         Transactions | This Month
                     </div>
 
-                    <div className='w-full bg-white rounded-lg px-3 pt-3 pb-6'>
+                    <div className='w-full bg-white rounded-lg px-3 pt-3 pb-6 stats-shadow'>
                         {/* header */}
                         <div className='flex justify-between mb-3'>
                             <div className="search-bar relative w-[248px]">
@@ -66,7 +66,7 @@ const Dashboard = () => {
 
                         {/* table */}
                         {/* table header */}
-                        <div className='bg-[#F2F2F2] flex gap-10 px-3 py-[10px] text-sm rounded'>
+                        <div className='bg-[#F2F2F2] flex gap-4 md:gap-10 px-3 py-[10px] text-sm rounded'>
                             <span className='w-[25%]'>Order ID</span>
                             <span className='w-[25%]'>
                                 Order date 
@@ -92,7 +92,7 @@ const Dashboard = () => {
                             {
                                 Children.toArray(entries.map((entry) => {
                                     return (
-                                        <div className='border border-transparent border-b-[#E6E6E6] flex gap-10 py-[10px] px-3 text-sm'>
+                                        <div className='border border-transparent border-b-[#E6E6E6] flex gap-4 md:gap-10 py-[10px] px-3 text-sm'>
                                             <span className='w-[25%]'>{entry.id}</span>
                                             <span className='w-[25%]'>{entry.date}</span>
                                             <span className='w-[25%] text-right'>{entry.amount}</span>
@@ -103,7 +103,7 @@ const Dashboard = () => {
                             }
                         </div>
 
-                        <div className="buttons mt-6 flex w-full justify-center items-center gap-6">
+                        <div className="buttons mt-6 flex w-full justify-center items-center gap-3 md:gap-6 flex-wrap md:flex-nowrap">
                             <button className="previous py-[6px] px-3 border border-[#D9D9D9] rounded text-sm">
                                 <svg className='me-2 inline' width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M5.78033 0.96967C5.48744 0.676777 5.01256 0.676777 4.71967 0.96967L0.21967 5.46967C0.0790172 5.61032 -9.53674e-07 5.80109 -9.53674e-07 6C-9.53674e-07 6.19891 0.0790172 6.38968 0.21967 6.53033L4.71967 11.0303C5.01256 11.3232 5.48744 11.3232 5.78033 11.0303C6.07322 10.7374 6.07322 10.2626 5.78033 9.96967L1.81066 6L5.78033 2.03033C6.07322 1.73744 6.07322 1.26256 5.78033 0.96967Z" fill="#4D4D4D"/>
@@ -117,7 +117,7 @@ const Dashboard = () => {
                                 <p className='px-[2px]'>11</p>
                                 <p className='px-[2px]'>12</p>
                                 <p className='px-[2px]'>13</p>
-                                <p className='px-[2px]'>14</p>
+                                <p className='px-[2px] min'>14</p>
                                 <p className='px-[2px]'>15</p>
                                 <p className='px-[2px]'>16</p>
                                 <p className='px-[2px]'>17</p>
